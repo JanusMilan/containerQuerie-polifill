@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://unpkg.com/container-query-polyfill/cqfill.iife.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <style>
+    .container {
+      contain: inline-size style layout;
+      resize: horizontal;
+      overflow: auto;
+      margin: 1rem auto;
+      outline: solid 1px gray;
+      outline-offset: 4px;
+    }
+
+    .box {
+      background: blue;
+      height: 100px;
+      width: 100px;
+    }
+
+    @container (min-width: 400px) {
+      .box {
+        background-color: green;
+        height: 150px;
+        width: 50px;
+      }
+    }
+    @media --css-container and (min-width: 400px) {
+      .box {
+        background-color: green;
+        height: 150px;
+        width: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+    </div>
+  </div>
+</body>
+
+</html>
